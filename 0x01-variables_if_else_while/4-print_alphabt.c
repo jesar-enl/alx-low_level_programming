@@ -13,7 +13,7 @@ int main(void)
 	/* print the alphabet, except letter e and q */
 	for (a = 'a'; a <= 'z'; a++)
 	{
-		if (a == 'e' && a == 'q')
+		if (a == 'e' || a == 'q')
 		{
 			continue;
 		}
