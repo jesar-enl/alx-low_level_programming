@@ -3,7 +3,8 @@
 #include "main.h"
 
 /**
- * main - Prints the characters "_putchar" on the screen with the help of the function _putchar()
+ * main - Prints the characters "_putchar" on the
+ * screen with the help of the function _putchar()
  *
  * Return: 0
  */
