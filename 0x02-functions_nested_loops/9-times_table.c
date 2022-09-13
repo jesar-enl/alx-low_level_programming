@@ -2,7 +2,7 @@
 
 /**
  * times_table - display the multiplications table
- * Description: prints a 9 times table starting 
+ * Description: prints a 9 times table starting
  * from 1
  * Return: Nothing
  */
