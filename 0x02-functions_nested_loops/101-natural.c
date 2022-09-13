@@ -13,8 +13,7 @@ int main(void)
 	int total;
 
 	n = 0;
-	total = 0;
-	
+	total = 0;	
 	while (n < 1024)
 	{
 		if (n % 3 == 0)
