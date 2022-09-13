@@ -2,10 +2,11 @@
 
 /**
  * _islower - checks for lowercase characters
+ * @c: Character code to evaluate
  *
- * Description: The function checks whether the 
+ * Description: The function checks whether the
  * character specified is lowercase
- * Return: 1 if success, 0 otherwise
+ * Return: 1 (if success) or 0 (otherwise)
  */
 
 int _islower(int c)
