@@ -12,11 +12,19 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	char *len = dest;
+	int a;
 
-	while (*src)
+	a = 0;
+	while (src[a] != '\0')
 	{
-		*dest++ = *src++;
+		dest[a] = src[a];
+		a++;
 	}
-	return (len);
+
+	if (src[a] == '\0')
+	{
+		dest[a] = '\0';
+	}
+
+	return (dest);
 }
