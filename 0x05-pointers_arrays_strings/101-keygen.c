@@ -9,7 +9,7 @@
  *
  * Return: password generated
  */
-void password_generator(int n)
+void password_generator(int N)
 {
 	/* inititalize counter */
 	int p = 0;
@@ -22,7 +22,7 @@ void password_generator(int n)
 	srand((unsigned int)(time(NULL)));
 
 	/* Array of numbers */
-	char nums[] = "0123456789";
+	char numbers[] = "0123456789";
 
 	/* Array of small alphabets */
 	char letter[] = "abcdefghijklmnopqrstuvwxyz";
@@ -34,17 +34,17 @@ void password_generator(int n)
 	char symbols[] = "!@#$^&*?";
 
 	/* Variable to store the password */
-	char password[n];
+	char password[N];
 
 	/* randomizer inside the loop */
 	randomizer = rand() % 4;
 
 	/* iterate over the range */
-	for (; p < n; p++)
+	for (; p < N; p++)
 	{
 		if (randomizer == 1)
 		{
-			password[p] = nums[rand() % 10];
+			password[p] = numbers[rand() % 10];
 			randomizer = rand() % 4;
 			printf("%c", password[p]);
 		}
@@ -77,9 +77,9 @@ void password_generator(int n)
 int main(void)
 {
 	/* Length of password to be generated */
-	int n = 10;
+	int N = 10;
 
-	password_generator(n);
-
+	password_generator(N);
+	putchar('\n');
 	return (0);
 }
