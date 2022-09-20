@@ -13,40 +13,26 @@
  */
 int main(void)
 {
-	int length = 0, i;
-	char *password = malloc(length + 1);
+	int i, sum, n;
+	int pass[100];
 
-	char *digits = "0123456789";
-	int digits_length = strlen(digits);
-	char *lower = "abcdefghijklmnopqrstuvwxyz";
-	int lower_length = strlen(lower);
-	char *upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	int upper_length = strlen(upper);
-	char *symbols = "!@#$%^&*?/~`";
-	int symbols_length = strlen(symbols);
+	sum = 0;
 
-	/* genrate a password each time with a unique id */
-	srand(time(NULL) * getpid());
-	/* loop through each char array to pick a random character */
-	for (i = 0; i < length; i++)
+	srand(time(NULL));
+
+	for (i = 0; i < 100; i++)
 	{
-		/* creates a random number between 0-3 */
-		int char_type = rand() % 4;
-
-		if (char_type == 0)
-			password[i] = digits[rand() % digits_length];
-		else if (char_type == 1)
-			password[i] = lower[rand() % lower_length];
-		else if (char_type == 2)
-			password[i] = upper[rand() % upper_length];
-		else
-			password[i] = symbols[rand() % symbols_length];
+		pass[i] = rand() % 78;
+		sum += (pass[i] + '0');
+		putchar(pass[i] + '0');
+		if ((2772 - sum) - '0' < 78)
+		{
+			n = 2772 - sum -'0';
+			sum += n;
+			putchar(n + '0');
+			break;
+		}
 	}
-	password[length] = '\0';
-	printf("Length: ");
-	scanf("%d", &length);
-
-	free(password);
 
 	return (0);
 }
