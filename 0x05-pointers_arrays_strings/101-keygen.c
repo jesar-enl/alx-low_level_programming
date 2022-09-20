@@ -15,7 +15,7 @@ int main(void)
 {
 	printf("Length of password: ");
 	int length;
-	
+
 	scanf("%d", &length);
 
 	char *password = malloc(length + 1);
@@ -32,7 +32,9 @@ int main(void)
 	/* genrate a password each time with a unique id */
 	srand(time(NULL) * getpid());
 	/* loop through each char array to pick a random character */
-	for (int i = 0; i < length; i++)
+	int i;
+
+	for (i = 0; i < length; i++)
 	{
 		/* creates a random number between 0-3 */
 		int char_type = rand() % 4;
