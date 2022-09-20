@@ -16,10 +16,6 @@ int main(void)
 	int length = 0, i;
 	char *password = malloc(length + 1);
 
-	printf("Length of password: ");
-
-	scanf("%d", &length);
-
 	char *digits = "0123456789";
 	int digits_length = strlen(digits);
 	char *lower = "abcdefghijklmnopqrstuvwxyz";
@@ -47,6 +43,8 @@ int main(void)
 			password[i] = symbols[rand() % symbols_length];
 	}
 	password[length] = '\0';
+	printf("Length: ");
+	scanf("%d", &length);
 
 	free(password);
 
