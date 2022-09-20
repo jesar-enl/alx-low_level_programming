@@ -13,13 +13,12 @@
  */
 int main(void)
 {
-	int length, i;
+	int length = 0, i;
+	char *password = malloc(length + 1);
 
 	printf("Length of password: ");
 
 	scanf("%d", &length);
-
-	char *password = malloc(length + 1);
 
 	char *digits = "0123456789";
 	int digits_length = strlen(digits);
