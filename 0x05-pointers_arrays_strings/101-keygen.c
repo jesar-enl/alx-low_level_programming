@@ -7,41 +7,30 @@
 
 /**
  * main - random password genrator
- *
  * Description: generates a random password
  * in the range of uppercase, lowercase, digits, and symbols.
- *
  * Return: 0
  */
 int main(void)
 {
 	printf("Length of password: ");
 	int length;
+	
 	scanf("%d", &length);
-
-	if (length <= 0)
-	{
-		printf("Password must be >= 1!");
-		return (1);
-	}
 
 	char *password = malloc(length + 1);
 
 	char *digits = "0123456789";
 	int digits_length = strlen(digits);
-
 	char *lower = "abcdefghijklmnopqrstuvwxyz";
 	int lower_length = strlen(lower);
-
 	char *upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	int upper_length = strlen(upper);
-
 	char *symbols = "!@#$%^&*?/~`";
 	int symbols_length = strlen(symbols);
 
 	/* genrate a password each time with a unique id */
 	srand(time(NULL) * getpid());
-
 	/* loop through each char array to pick a random character */
 	for (int i = 0; i < length; i++)
 	{
@@ -58,8 +47,6 @@ int main(void)
 			password[i] = symbols[rand() % symbols_length];
 	}
 	password[length] = '\0';
-
-	printf("Password: %s\n", password);
 
 	free(password);
 
