@@ -1,30 +1,35 @@
 #include "main.h"
 
 /**
- * rot13 - rotate letters 13 places
- * @s: character to be rotated
- * Description: The function rotates a character 13 places, after or before it.
- * Return: the character
+ * rot13 - encodes a string using the ROT13 system
+ * @str: String to be encoded
+ *
+ * Return: Encoded string
  */
-char *rot13(char *s)
+char *rot13(char *str)
 {
-	int i = 0;
+	int i, j;
+	char *lookup;
 
-	while (s[i] != '\0')
+	lookup = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	i = 0;
+	while (str[i] != '\0')
 	{
-		while ((s[i] >= 97 && s[i] <= 122) || (s[i] >= 65 && s[i] <= 90))
+		j = 0;
+		while (lookup[j] != '\0')
 		{
-			if ((s[i] >= 97 && s[i] <= 109) || (s[i] >= 65 && s[i] <= 77))
+			if (str[i] == lookup[j])
 			{
-				s[i] += 13;
+				int index;
+
+				index = ((j + 13) % 26) + ((j / 26) * 26);
+				str[i] = lookup[index];
+				break;
 			}
-			else
-			{
-				s[i] -= 13;
-			}
-			i++;
+			j++;
 		}
 		i++;
 	}
-	return (s);
+
+	return (str);
 }
