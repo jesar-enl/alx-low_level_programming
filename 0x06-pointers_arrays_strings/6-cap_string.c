@@ -2,40 +2,41 @@
 
 /**
  * cap_string - Capitalize every word in a string
- * separator - special characters
- * @c: character
  * @str: String argument
  *
  * Return: Capitalized @str
  */
-int separator(char c)
-{
-	int i = 0;
-	char sept[13] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
-
-	for (; i < 13; i++)
-	{
-		if (c == sept[i])
-		{
-			return (1);
-		}
-	}
-
-	return (0);
-}
-
 char *cap_string(char *str)
 {
-	int i = 0;
-	while (str[i])
+	int i;
+
+	i = 0;
+	if (str[0] >= 'a' && str[0] <= 'z')
 	{
-		if (i == 0 && (str[i] >= 'a' && str[i] <= 'z'))
-			str[i] = str[i] - 32;
-
-		if (separator(str[i]) && (str[i + 1] >= 'a' && str[i + 1] <= 'z'))
-			str[i + 1] -= 32;
-
-		i++;
+		str[0] = str[0] - 32;
+	}
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		switch (str[i])
+		{
+			case ' ':
+			case '\n':
+			case '\t':
+			case ',':
+			case '.':
+			case ';':
+			case '!':
+			case '?':
+			case '"':
+			case '(':
+			case ')':
+			case '{':
+			case '}':
+				if (str[i + 1] >= 97 && str[i + 1] <= 122)
+				{
+					str[i + 1] = str[i + 1] - 32;
+				}
+		}
 	}
 
 	return (str);
