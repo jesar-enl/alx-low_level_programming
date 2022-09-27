@@ -10,15 +10,19 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i;
-	int d1 = 0;
-	int d2 = 0;
+	/*Variable Declaration*/
+	int i, j, k;
+	long sum1, sum2;
 
-	for (i = 0; i < size; i++)
+	sum1 = 0;
+	sum2 = 0;
+	/*Loops through elements on the diagonal*/
+	for (i = 0, j = 0, k = (size - 1);
+			(i < 20) && (j < size) && (k > -1);
+			i++, j++, k--)
 	{
-		d1 += a[(i * size) + 1];
-		d2 += a[(size - 1) + ((size - 1) * i)];
+		sum1 += *(a + size * i + j);
+		sum2 += *(a + size * i + k);
 	}
-
-	printf("%d, %d\n", d1, d2);
+	printf("%ld, %ld\n", sum1, sum2); /*Outputs sum*/
 }
