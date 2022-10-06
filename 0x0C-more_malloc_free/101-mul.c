@@ -4,7 +4,7 @@
  * main - multiplies two arguments (int)
  * @argc: argument count
  * @argv: Argument vector
- * Return: 0
+ * Return: nothing
  */
 int main(int argc, char *argv[])
 {
