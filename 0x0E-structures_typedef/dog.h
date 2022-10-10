@@ -10,7 +10,7 @@
  * Description: Data type that can be used to represent a dog
  * in out code.
  */
-struct dog 
+struct dog
 {
 	char *name;
 	float age;
