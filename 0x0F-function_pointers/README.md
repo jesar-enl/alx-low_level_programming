@@ -1,6 +1,6 @@
 # C - Function pointers
 
-```
+```c
 void fun(int a)
 {
 	printf("The value of a is %d\n", a);
@@ -8,7 +8,7 @@ void fun(int a)
 ```
 
 To point to this function;
-```
+```c
 void (*fun_p)(int) = &fun;
 ```
 
