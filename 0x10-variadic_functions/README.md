@@ -11,8 +11,22 @@ va_end(args);
 where `args` is the variable name initialized by `va_list`.
 
 to start the function, we use the `va_start` argument, while the `va_end` command terminates the function.
+1. 
 
-3. A function that prints anything.
+2. 
+
+
+3. A function that prints two strings.
+	- where `separator` is the string to be placed between the strings.
+	- `n` is the number of strings passed to the function
+	- prototype:
+```c
+void print_strings(const char *separator, const unsigned int n, ...);
+```
+	- If separator is `NULL`, don't print it
+	- If one string is `NULL`, print `(nil)` instead
+
+4. A function that prints anything.
 	- where the format is a list of types of arguments passed to the function; `char`, `int`, `float`, `string char`
 	- prototype:
 ```c 
