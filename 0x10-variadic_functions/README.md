@@ -13,8 +13,14 @@ where `args` is the variable name initialized by `va_list`.
 to start the function, we use the `va_start` argument, while the `va_end` command terminates the function.
 1. 
 
-2. 
-
+2. A function that prints numbers.
+	- where `separator`  is the string to be printed between numbers
+	- `n`  is the number of integers passed to the function
+	- if `separator is `NULL`, don't print it.
+	- prototype:
+```c
+void print_numbers(const char *separator, const unsigned int n, ...);
+```
 
 3. A function that prints two strings.
 	- where `separator` is the string to be placed between the strings.
