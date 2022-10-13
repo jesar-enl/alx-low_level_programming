@@ -4,7 +4,7 @@ These are function that accept any number of arguments.
 
 ```c
 va_list args;
-va_args(args, n);
+va_arg(args, n);
 va_start(args, n);
 va_end(args);
 ```
