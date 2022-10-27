@@ -1,5 +1,6 @@
 #include "main.h"
 
+unsigned int get_length(unsigned long int num);
 /**
  * flip_bits -  returns the number of bits to be flipped in 'n' to give 'm'
  * @n: first number provided
