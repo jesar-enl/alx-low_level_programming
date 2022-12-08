@@ -1,40 +1,43 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - inserts a new node at specified index in D.L.L
- * @h: Address of pointer to head node
- * @idx: index at which to add the new node
- * @n: data to be added to the D.L.L
- *
- * Return: address of new node (Success) or NULL (failed)
+ * insert_dnodeint_at_index - new node at a certain index/ position
+ * @h: header pointer
+ * @idx: position
+ * @n: data
+ * Return: new list
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *curr, *new_node;
-	unsigned int i = 0;
+        dlistint_t *temp, *temp2;
+        unsigned int i = 0;
 
-	if (*h == NULL)
-		return (NULL);
-	new_node = malloc(sizeof(dlistint_t));
-	if (new_node == NULL)
-		return (NULL);
-	new_node->n = n;
-	new_node->next = NULL;
-	new_node->prev = NULL;
-	curr = *h;
-	while (curr != NULL)
-	{
-		if (i == idx)
-		{
-			(curr->prev)->next = new_node;
-			new_node->prev = curr->prev;
-			curr->prev = new_node;
-			new_node->next = curr;
-			return (new_node);
-		}
-		curr = curr->next;
-		i++;
-	}
-	free(new_node);
-	return (NULL);
+        if (*h == NULL)
+        {
+                return (NULL);
+        }
+        temp2 = malloc(sizeof(dlistint_t));
+        if (temp2 == NULL)
+        {
+                return (NULL);
+        }
+        temp2->n = n;
+        temp2->next = NULL;
+        temp2->prev = NULL;
+        temp = *h;
+        while (temp != NULL)
+        {
+                if (i == idx)
+                {
+                        (temp->prev)->next = temp2;
+                        temp2->prev = temp->prev;
+                        temp->prev = temp2;
+                        temp2->next = temp;
+                        return (temp2);
+                }
+                temp = temp->next;
+                i++;
+        }
+        free(temp2);
+        return (NULL);
 }
